@@ -40,10 +40,8 @@ function keyPressed(){
   if (key === 's'){
     drawPg()
     save(pg,'Contendor Historietas_00.svg') 
-  }
-  redraw()
-}  
-
+ }  
+}
   
   function draw() {
     background(0);
@@ -257,17 +255,17 @@ function keyPressed(){
   }
 
   function drawPg() {
-    pg.background(0);
+    // pg.background(0);
     pg.noFill()
-    // scale(3.7795275591,3.7795275591)
-    pg.translate((width/2)-(c/2),(height/2)+(b/2))
+    pg.translate(((width/2)-(c/2))*pxl,((height/2)+(b/2))*pxl)
     pg.angleMode(DEGREES)
-    pg.rotate(0)    
+    pg.rotate(0)
 
+    // Scale pixels to mm
     a *= pxl
     b *= pxl
     c *= pxl
-    d *= pxl    
+    d *= pxl
 
     // All vertex
     p1 = createVector(0,0)
@@ -342,6 +340,58 @@ function keyPressed(){
     p66 = p5.Vector.add(p65,[((a+(2*d)-(a/5))/2),0])
     p64a = p5.Vector.add(p63,[((a+(2*d))/2),0])
 
+    // Trazo Interior Horizontales --> Suaje
+    pg.stroke(suaje)
+    pg.beginShape()
+    vertex(p42.x, p42.y)
+    vertex(p23.x, p23.y)
+    vertex(p24.x, p24.y)
+    vertex(p61.x, p61.y)
+    pg.endShape()
+    // beginShape()
+    // vertex(p33.x, p33.y)
+    // vertex(p2a.x, p2a.y)
+    // vertex(p2.x, p2.y)
+    // vertex(p3.x, p3.y)
+    // vertex(p3a.x, p3a.y)
+    // vertex(p49.x, p49.y)
+    // endShape()
+    pg.beginShape()
+    vertex(p31.x, p31.y)
+    vertex(p1.x, p1.y)
+    vertex(p4.x, p4.y)
+    vertex(p51.x, p51.y)
+    pg.endShape()
+    pg.line(p6.x,p6.y,p55.x,p55.y)
+    pg.line(p12.x,p12.y,p11.x,p11.y)
+    pg.line(p14.x,p14.y,p13.x,p13.y)
+    pg.line(p64.x,p64.y,p65.x,p65.y)
+
+    // Trazo Interior Verticales --> Suaje
+    pg.line(p32.x,p32.y,p31.x,p31.y)
+    pg.beginShape()
+    vertex(p48.x, p48.y)
+    vertex(p23.x, p23.y)
+    vertex(p2a.x, p2a.y)
+    pg. endShape()
+    pg. beginShape()
+    vertex(p2.x, p2.y)
+    vertex(p1.x, p1.y)
+    vertex(p6.x, p6.y)
+    vertex(p6a.x, p6a.y)
+    pg. endShape()
+    pg.beginShape()
+    vertex(p30.x, p30.y)
+    vertex(p24.x, p24.y)
+    vertex(p3a.x, p3a.y)
+    pg.endShape()
+    pg.beginShape()
+    vertex(p3.x, p3.y)
+    vertex(p4.x, p4.y)
+    vertex(p60.x, p60.y)
+    pg.endShape()
+    pg.line(p50.x,p50.y,p51.x,p51.y)
+    
     // Trazo Exterior y cortes --> CORTES
     pg.stroke(corte)
     pg.beginShape()
@@ -362,7 +412,6 @@ function keyPressed(){
     vertex(p63.x, p64.y)
     vertex(p64.x, p64.y)
     pg.endShape()
-    
     pg.arc(p64a.x,p64a.y,(a/5),(a/5),180,0,OPEN)
     pg.beginShape()
     vertex(p65.x, p65.y)
@@ -418,57 +467,9 @@ function keyPressed(){
     vertex(p45.x, p45.y)
     vertex(p46.x, p46.y)
     pg.endShape(CLOSE)
+    pg.line(p33.x,p33.y,p2.x,p2.y)
+    pg.line(p3.x,p3.y,p49.x,p49.y)
 
-    // Trazo Interior Horizontales --> Suaje
-    pg.stroke(suaje)
-    pg.beginShape()
-    vertex(p42.x, p42.y)
-    vertex(p23.x, p23.y)
-    vertex(p24.x, p24.y)
-    vertex(p61.x, p61.y)
-    pg.endShape()
-    pg.beginShape()
-    vertex(p33.x, p33.y)
-    vertex(p2a.x, p2a.y)
-    vertex(p2.x, p2.y)
-    vertex(p3.x, p3.y)
-    vertex(p3a.x, p3a.y)
-    vertex(p49.x, p49.y)
-    pg.endShape()
-    pg.beginShape()
-    vertex(p31.x, p31.y)
-    vertex(p1.x, p1.y)
-    vertex(p4.x, p4.y)
-    vertex(p51.x, p51.y)
-    pg.endShape()
-    pg.line(p6.x,p6.y,p55.x,p55.y)
-    pg.line(p12.x,p12.y,p11.x,p11.y)
-    pg.line(p14.x,p14.y,p13.x,p13.y)
-
-    // Trazo Interior Verticales --> Suaje
-    pg.line(p32.x,p32.y,p31.x,p31.y)
-    pg. beginShape()
-    vertex(p48.x, p48.y)
-    vertex(p23.x, p23.y)
-    vertex(p2a.x, p2a.y)
-    pg.endShape()
-    pg.beginShape()
-    vertex(p2.x, p2.y)
-    vertex(p1.x, p1.y)
-    vertex(p6.x, p6.y)
-    vertex(p6a.x, p6a.y)
-    pg.endShape()
-    pg.beginShape()
-    vertex(p30.x, p30.y)
-    vertex(p24.x, p24.y)
-    vertex(p3a.x, p3a.y)
-    pg.endShape()
-    pg.beginShape()
-    vertex(p3.x, p3.y)
-    vertex(p4.x, p4.y)
-    vertex(p60.x, p60.y)
-    pg.endShape()
-    pg.line(p50.x,p50.y,p51.x,p51.y)
-    
+    redraw()
   }
 
