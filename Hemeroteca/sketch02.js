@@ -10,7 +10,7 @@ Programacion: Arquiaz (RDE)
 var a = 130.00
 var b = 180.80
 var c = 150.50
-var d = 1.80
+var d = 1.800
 var corte = '#000000' //'#00eeee'
 var suaje = '#ff0000' //'#ee00ee'
 // var pxl = 3.7795275591
