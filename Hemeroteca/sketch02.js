@@ -11,8 +11,8 @@ var a = 130.00
 var b = 180.80
 var c = 150.50
 var d = 1.30
-var corte = '#00eeee'
-var suaje = '#ee00ee'
+var corte = '#000000' //'#00eeee'
+var suaje = '#ff0000' //'#ee00ee'
 // var pxl = 3.7795275591
 // var pxl = 2.645833333
 var pxl = 1 * ( 72 / 25.4 )
@@ -44,7 +44,7 @@ function keyPressed(){
 }
   
   function draw() {
-    background(0);
+    background(255);
     noFill()
     translate((width/2)-(c/2),(height/2)+(b/2))
     angleMode(DEGREES)
@@ -73,10 +73,10 @@ function keyPressed(){
     p20 = p5.Vector.add(p19,[0,-(3*d)])
     p21 = p5.Vector.add(p20,[-(((c-(4*d))-(c/3))/2),0])
     p22 = p5.Vector.add(p21,[0,-((a/2)-(2*d))])
-    p2a = p5.Vector.add(p2,[-d,0])
-    p23 = p5.Vector.add(p2a,[0,-(a+(3*d))])
-    p24 = p5.Vector.add(p23,[(c+(2*d)),0])
-    p3a = p5.Vector.add(p3,[d,0])
+    p2a = p5.Vector.add(p2,[-(d*2),0]) // Mod 1 espesor
+    p23 = p5.Vector.add(p2a,[0,-(a+(3*d))]) //Mod por el anterior
+    p24 = p5.Vector.add(p23,[(c+(4*d)),0]) // Mod 1 espesor
+    p3a = p5.Vector.add(p3,[(d*2),0]) // Mod 1 espesor
     p25 = p5.Vector.add(p23,[0,-((a+(3*d)-(a/5))/2)])
     p26 = p5.Vector.add(p25,[d,0])
     p27 = p5.Vector.add(p26,[0,-(a/5)])
@@ -85,7 +85,7 @@ function keyPressed(){
     p30 = p5.Vector.add(p29,[(c+(2*d)),0])
     p31 = p5.Vector.add(p1,[-a,0])
     p32 = p5.Vector.add(p31,[0,-(a/2)])
-    p33 = p5.Vector.add(p2a,[-((a/2)+d),0])
+    p33 = p5.Vector.add(p2a,[-((a/2)+(2*d)),0]) //Mod 1 espesor
     p34 = p5.Vector.add(p31,[-(c/2),0])
     p35 = p5.Vector.add(p34,[0,-(a/2)])
     p6a = p5.Vector.add(p1,[0,c])
@@ -98,12 +98,12 @@ function keyPressed(){
     p42 = p5.Vector.add(p23,[-(a+(2*d)),0])
     p41 = p5.Vector.add(p42,[0,(a/2)])
     p43 = p5.Vector.add(p42,[((a/5)*2),0])
-    p44 = p5.Vector.add(p43,[0,-d])
+    p44 = p5.Vector.add(p43,[0,-(2*d)]) //Mod 1 espesor
     p45 = p5.Vector.add(p44,[(a/5),0])
-    p46 = p5.Vector.add(p45,[0,d])
+    p46 = p5.Vector.add(p45,[0,(2*d)]) //Mod 1 espesor
     p47 = p5.Vector.add(p42,[0,-(c/3)])
     p48 = p5.Vector.add(p47,[(a+(2*d)),0])
-    p49 = p5.Vector.add(p3a,[((a/2)+d),0])
+    p49 = p5.Vector.add(p3a,[((a/2)+(2*d)),0]) //Mod 1 espesor
     p51 = p5.Vector.add(p4,[a,0])
     p50 = p5.Vector.add(p51,[0,-(a/2)])
     p52 = p5.Vector.add(p4,[(a/3),0])
@@ -117,7 +117,7 @@ function keyPressed(){
     p60 = p5.Vector.add(p59,[-(a-(3*d)),0])
     p61 = p5.Vector.add(p24,[(a+(2*d)),0])
     p62 = p5.Vector.add(p61,[0,(a/2)])
-    p63 = p5.Vector.add(p30,[0,-((c+(2*d))-(a+(3*d)))])
+    p63 = p5.Vector.add(p30,[0,-((c+(3*d))-(a+(3*d)))]) //Mod 1 espesor
     p64 = p5.Vector.add(p63,[((a+(2*d)-(a/5))/2),0])
     p65 = p5.Vector.add(p64,[(a/5),0])
     p66 = p5.Vector.add(p65,[((a+(2*d)-(a/5))/2),0])
@@ -290,10 +290,14 @@ function keyPressed(){
     p20 = p5.Vector.add(p19,[0,-(3*d)])
     p21 = p5.Vector.add(p20,[-(((c-(4*d))-(c/3))/2),0])
     p22 = p5.Vector.add(p21,[0,-((a/2)-(2*d))])
-    p2a = p5.Vector.add(p2,[-d,0])
-    p23 = p5.Vector.add(p2a,[0,-(a+(3*d))])
-    p24 = p5.Vector.add(p23,[(c+(2*d)),0])
-    p3a = p5.Vector.add(p3,[d,0])
+    p2a = p5.Vector.add(p2,[-(d*2),0]) // Mod 1 espesor
+    p23 = p5.Vector.add(p2a,[0,-(a+(3*d))]) //Mod por el anterior
+    p24 = p5.Vector.add(p23,[(c+(4*d)),0]) // Mod 1 espesor
+    p3a = p5.Vector.add(p3,[(d*2),0]) // Mod 1 espesor
+    // p2a = p5.Vector.add(p2,[-d,0])
+    // p23 = p5.Vector.add(p2a,[0,-(a+(3*d))])
+    // p24 = p5.Vector.add(p23,[(c+(2*d)),0])
+    // p3a = p5.Vector.add(p3,[d,0])
     p25 = p5.Vector.add(p23,[0,-((a+(3*d)-(a/5))/2)])
     p26 = p5.Vector.add(p25,[d,0])
     p27 = p5.Vector.add(p26,[0,-(a/5)])
@@ -302,7 +306,8 @@ function keyPressed(){
     p30 = p5.Vector.add(p29,[(c+(2*d)),0])
     p31 = p5.Vector.add(p1,[-a,0])
     p32 = p5.Vector.add(p31,[0,-(a/2)])
-    p33 = p5.Vector.add(p2a,[-((a/2)+d),0])
+    // p33 = p5.Vector.add(p2a,[-((a/2)+d),0])
+    p33 = p5.Vector.add(p2a,[-((a/2)+(2*d)),0]) //Mod 1 espesor
     p34 = p5.Vector.add(p31,[-(c/2),0])
     p35 = p5.Vector.add(p34,[0,-(a/2)])
     p6a = p5.Vector.add(p1,[0,c])
@@ -315,12 +320,15 @@ function keyPressed(){
     p42 = p5.Vector.add(p23,[-(a+(2*d)),0])
     p41 = p5.Vector.add(p42,[0,(a/2)])
     p43 = p5.Vector.add(p42,[((a/5)*2),0])
-    p44 = p5.Vector.add(p43,[0,-d])
+    p44 = p5.Vector.add(p43,[0,-(2*d)]) //Mod 1 espesor
+    // p44 = p5.Vector.add(p43,[0,-d])
     p45 = p5.Vector.add(p44,[(a/5),0])
-    p46 = p5.Vector.add(p45,[0,d])
+    p46 = p5.Vector.add(p45,[0,(2*d)]) //Mod 1 espesor
+    // p46 = p5.Vector.add(p45,[0,d])
     p47 = p5.Vector.add(p42,[0,-(c/3)])
     p48 = p5.Vector.add(p47,[(a+(2*d)),0])
-    p49 = p5.Vector.add(p3a,[((a/2)+d),0])
+    p49 = p5.Vector.add(p3a,[((a/2)+(2*d)),0]) //Mod 1 espesor
+    // p49 = p5.Vector.add(p3a,[((a/2)+d),0])
     p51 = p5.Vector.add(p4,[a,0])
     p50 = p5.Vector.add(p51,[0,-(a/2)])
     p52 = p5.Vector.add(p4,[(a/3),0])
@@ -334,7 +342,8 @@ function keyPressed(){
     p60 = p5.Vector.add(p59,[-(a-(3*d)),0])
     p61 = p5.Vector.add(p24,[(a+(2*d)),0])
     p62 = p5.Vector.add(p61,[0,(a/2)])
-    p63 = p5.Vector.add(p30,[0,-((c+(2*d))-(a+(3*d)))])
+    // p63 = p5.Vector.add(p30,[0,-((c+(2*d))-(a+(3*d)))])
+    p63 = p5.Vector.add(p30,[0,-((c+(3*d))-(a+(3*d)))]) //Mod 1 espesor
     p64 = p5.Vector.add(p63,[((a+(2*d)-(a/5))/2),0])
     p65 = p5.Vector.add(p64,[(a/5),0])
     p66 = p5.Vector.add(p65,[((a+(2*d)-(a/5))/2),0])
