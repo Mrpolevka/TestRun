@@ -82,7 +82,7 @@ function keyPressed(){
     p27 = p5.Vector.add(p26,[0,-(a/5)])
     p28 = p5.Vector.add(p27,[-d,0])
     p29 = p5.Vector.add(p28,[0,-((a+(3*d)-(a/5))/2)])
-    p30 = p5.Vector.add(p29,[(c+(4*d)),0])
+    p30 = p5.Vector.add(p29,[(c+(4*d)),0]) //Mod 2 espesores mas.
     p31 = p5.Vector.add(p1,[-a,0])
     p32 = p5.Vector.add(p31,[0,-(a/2)])
     p33 = p5.Vector.add(p2a,[-((a/2)+(2*d)),0]) //Mod 1 espesor
@@ -318,7 +318,8 @@ function keyPressed(){
     p27 = p5.Vector.add(p26,[0,-(a/5)])
     p28 = p5.Vector.add(p27,[-d,0])
     p29 = p5.Vector.add(p28,[0,-((a+(3*d)-(a/5))/2)])
-    p30 = p5.Vector.add(p29,[(c+(2*d)),0])
+    // p30 = p5.Vector.add(p29,[(c+(2*d)),0])
+    p30 = p5.Vector.add(p29,[(c+(4*d)),0])
     p31 = p5.Vector.add(p1,[-a,0])
     p32 = p5.Vector.add(p31,[0,-(a/2)])
     // p33 = p5.Vector.add(p2a,[-((a/2)+d),0])
